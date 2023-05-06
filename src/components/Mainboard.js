@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Pin from "./Pin";
+import "./Mainboard.css";
+
 function Mainboard(props) {
   let { pins } = props;
   return (
     <Wrapper>
-      <Container>
+      <Container className="mainboard__container">
         {pins.map((pin, index) => {
           let { urls } = pin;
           return <Pin key={index} urls={urls} />;
@@ -26,7 +28,8 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 const Container = styled.div`
+  column-gap: 10px;
   background-color: white;
-  display: flex;
-  width: 80%;
+  margin: 0 auto;
+  height: 100%;
 `;

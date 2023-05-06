@@ -25,6 +25,30 @@ function App() {
     });
   };
 
+  const getNewPins = () => {
+    let promises = [];
+    let pinData = [];
+    let pins = ["cars", "anime", "cats", "dogs", "bali", "tokyo"];
+    pins.forEach((pinTerm) => {
+      promises.push(
+        getImages(pinTerm).then((res) => {
+          let results = res.data.results;
+          pinData = pinData.concat(results);
+          pinData.sort(function (a, b) {
+            return 0.5 - Math.random();
+          });
+        })
+      );
+    });
+    Promise.all(promises).then(() => {
+      setNewPins(pinData);
+    });
+  };
+
+  useState(() => {
+    getNewPins();
+  }, []);
+
   return (
     <div className="App">
       <Header onSubmit={onSearchSubmit} />
