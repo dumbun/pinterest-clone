@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import styled from "styled-components";
 import {
   Pinterest,
@@ -11,6 +12,11 @@ import TextsmsIcon from "@mui/icons-material/Textsms";
 import FaceIcon from "@mui/icons-material/Face";
 
 function Header() {
+  const [input, setInput] = useState("");
+  const onSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log("this is the input", input);
+  };
   return (
     <Wrapper>
       <LogoWrapper>
@@ -30,8 +36,8 @@ function Header() {
             <Search></Search>
           </IconButton>
           <form type="text">
-            <input onChange={(e) => console.log(e.target.value)} type="text" />
-            <button type="submit"></button>
+            <input onChange={(e) => setInput(e.target.value)} type="text" />
+            <button type="submit" onClick={onSearchSubmit}></button>
           </form>
         </SearchBarWrapper>
       </SearchWapper>
