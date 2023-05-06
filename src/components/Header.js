@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Pinterest } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
+import { Search } from "@mui/icons-material";
+import { Notifications } from "@mui/icons-material";
+import TextsmsIcon from "@mui/icons-material/Textsms";
 
 function Header() {
   return (
@@ -11,6 +14,32 @@ function Header() {
           <Pinterest />
         </IconButton>
       </LogoWrapper>
+      <HomePageButton>
+        <a href="/">Homepage</a>
+      </HomePageButton>
+      <FollowingButton>
+        <a href="/">Following</a>
+      </FollowingButton>
+      <SearchWapper>
+        <SearchBarWrapper>
+          <IconButton>
+            <Search></Search>
+          </IconButton>
+          <form type="text">
+            <input type="text" />
+            <button type="submit"></button>
+          </form>
+        </SearchBarWrapper>
+      </SearchWapper>
+      <IconsWrapper>
+        <IconButton>
+          <Notifications></Notifications>
+        </IconButton>
+        <IconButton>
+          <TextsmsIcon />
+        </IconButton>
+        <IconButton></IconButton>
+      </IconsWrapper>
     </Wrapper>
   );
 }
@@ -33,3 +62,66 @@ const LogoWrapper = styled.div`
     cursor: pointer;
   }
 `;
+
+const HomeButtons = styled.div`
+  display: flex;
+  height: 48px;
+  min-width: 123px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  cursor: pointer;
+`;
+
+const HomePageButton = styled(HomeButtons)`
+  background-color: black;
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+  }
+`;
+const FollowingButton = styled(HomeButtons)`
+  background-color: white;
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: 1.5s;
+  }
+  :hover {
+    background-color: #e1e1e1;
+  }
+`;
+const SearchWapper = styled.div`
+  flex: 1;
+`;
+const SearchBarWrapper = styled.div`
+  background-color: #efefef;
+  display: flex;
+  height: 48px;
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  padding-left: 10px;
+  form {
+    display: flex;
+    flex: 1;
+  }
+  form > input {
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    margin-left: 5px;
+    background-color: transparent;
+  }
+  form > button {
+    display: none;
+  }
+  input:focus {
+    outline: none;
+  }
+`;
+
+const IconsWrapper = styled.div``;
