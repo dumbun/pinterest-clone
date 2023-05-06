@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Pinterest } from "@mui/icons-material";
+import {
+  Pinterest,
+  Search,
+  Notifications,
+  KeyboardArrowDown,
+} from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import { Search } from "@mui/icons-material";
-import { Notifications } from "@mui/icons-material";
 import TextsmsIcon from "@mui/icons-material/Textsms";
+import FaceIcon from "@mui/icons-material/Face";
 
 function Header() {
   return (
@@ -15,7 +19,7 @@ function Header() {
         </IconButton>
       </LogoWrapper>
       <HomePageButton>
-        <a href="/">Homepage</a>
+        <a href="/">Homepage</a>{" "}
       </HomePageButton>
       <FollowingButton>
         <a href="/">Following</a>
@@ -38,7 +42,12 @@ function Header() {
         <IconButton>
           <TextsmsIcon />
         </IconButton>
-        <IconButton></IconButton>
+        <IconButton>
+          <FaceIcon />
+        </IconButton>
+        <IconButton>
+          <KeyboardArrowDown />
+        </IconButton>
       </IconsWrapper>
     </Wrapper>
   );
