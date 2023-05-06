@@ -30,7 +30,7 @@ function Header() {
             <Search></Search>
           </IconButton>
           <form type="text">
-            <input type="text" />
+            <input onChange={(e) => console.log(e.target.value)} type="text" />
             <button type="submit"></button>
           </form>
         </SearchBarWrapper>
