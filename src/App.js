@@ -53,6 +53,7 @@ function App() {
     <div className="App">
       <Header onSubmit={onSearchSubmit} />
       <Mainboard pins={pins} />
+      <footer>K Vamshi Krishna @ dumbun.xyz</footer>
     </div>
   );
 }
